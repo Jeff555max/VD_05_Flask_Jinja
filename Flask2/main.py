@@ -4,15 +4,15 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route('/')
 def home():
-    return render_template('/index.html')
+    return render_template('index.html')
 
-@app.route('/blog.html')
+@app.route('/blog')
 def blog():
-    return render_template('/blog.html')
+    return render_template('blog.html')
 
-@app.route('/contacts.html')
+@app.route('/contacts')
 def contacts():
-    return render_template('/contact.html')
+    return render_template('contact.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
