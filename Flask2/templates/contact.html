@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Dev Team</title>
+  <link rel="stylesheet" href="../static/contact.css">
+</head>
+<body>
+  <header class="header">
+    <nav>
+      <div class="logo">&lt;DevTeam/&gt;</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="contact-container">
+    <div class="contact-form">
+      <h1>Get in Touch</h1>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="successMessage" class="success-message">
+        Thank you for your message! We'll get back to you soon.
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <h2>Other Ways to Reach Us</h2>
+      <p>Email: contact@devteam.com</p>
+      <p>Phone: +1 (555) 123-4567</p>
+      <p>Address: 123 Tech Street, Silicon Valley, CA 94025</p>
+    </div>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
