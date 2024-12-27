@@ -12,7 +12,7 @@ def blog():
 
 @app.route('/contacts.html')
 def contacts():
-    return render_template('/contacts.html')
+    return render_template('/contact.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
