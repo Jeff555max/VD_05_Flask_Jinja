@@ -1,0 +1,45 @@
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    /*- **vh** (viewport height) — это единица измерения, которая равна 1% от высоты окна просмотра. Например:
+  - `1vh` — это 1% от высоты окна.
+  - `100vh` — это 100% высоты окна, что означает, что элемент займет всю высоту видимой области браузера.
+
+Когда вы используете `height: 100vh;`, элемент будет растягиваться на всю высоту экрана,
+независимо от размера окна браузера. Это полезно для создания полноэкранных секций, например,
+для заголовков, слайдеров или любых других элементов, которые должны занимать всю высоту экрана. */
+
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.clock {
+    font-size: 4em;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    background: orange;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.date {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.clock:hover {
+    animation: pulse 2s infinite;
+}
