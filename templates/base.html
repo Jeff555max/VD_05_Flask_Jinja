@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-
     {% block title %}
-
     {% endblock %}
-
   </title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../static/index.css">
-
 </head>
 <body>
-<ul class="nav nav-pills">
+
+<!-- Навигационное меню с идентификатором -->
+<ul id="navMenu" class="nav nav-pills">
   <li class="nav-item">
     <a class="nav-link {% if active_page == 'home' %}active{% endif %}"
        aria-current="page" href="/">Главная</a>
@@ -32,42 +30,53 @@
 </ul>
 <br><br>
 
-
-<!--  Создаём блок для контента. Делаем это после меню, перед футером. -->
-
+<!-- Блок для контента -->
 {% block content %}
-
 {% endblock %}
 
 <!-- Footer -->
 <footer class="mt-5">
-    <div class="container">
-        <div class="row">
-            <div id="03" class="col-md-6">
-                <h5>Контакты</h5>
-                <p>Email: Evgeni-5@yandex.ru </p>
-                <p>Telegram: https://t.me/JJJeFFF5 </p>
-                <p>GitHub: github.com/Jeff555max </p>
-                <p>Phone: +79222667354</p>
-                <p>Address: Тюмень </p>
-                <a href="#title" class="btn btn-outline-primary">НАВЕРХ</a>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <h5>Социальные сети</h5>
-                 <ul class="list-unstyled">
-                        <li><a href="https://vk.com/id10216908" target="_blank" class="text-white">VK</a></li>
-                        <li><a href="https://t.me/JJJeFFF5" target="_blank" class="text-white">Telegram</a></li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div id="03" class="col-md-6">
+        <h5>Контакты</h5>
+        <p>Email: Evgeni-5@yandex.ru </p>
+        <p>Telegram: https://t.me/JJJeFFF5 </p>
+        <p>GitHub: github.com/Jeff555max </p>
+        <p>Phone: +79222667354</p>
+        <p>Address: Тюмень </p>
+        <a href="#navMenu" class="btn btn-outline-primary scroll-to-top">НАВЕРХ</a>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <h5>Социальные сети</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://vk.com/id10216908" target="_blank" class="text-white">VK</a></li>
+          <li><a href="https://t.me/JJJeFFF5" target="_blank" class="text-white">Telegram</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="bg-secondary text-center py-2">
-            <p class="mb-0">&copy; 2024 Все права защищены.</p>
-        </div>
+  </div>
+  <div class="bg-secondary text-center py-2">
+    <p class="mb-0">&copy; 2024 Все права защищены.</p>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<!-- Скрипт для плавного скроллинга -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>
