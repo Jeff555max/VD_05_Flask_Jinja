@@ -8,7 +8,7 @@ def home():
     context = {
         'question': 'Дубровники',
         'active_page': 'home',
-        'css_file': 'index.css'  # Указываем CSS для главной страницы
+        'css_file': 'index.css'  # Указываем css для главной страницы
     }
     return render_template("index.html", **context)
 
@@ -18,7 +18,7 @@ def blog():
     context = {
         'question': 'Хорватия и Черногория',
         'active_page': 'blog',
-        'css_file': 'blog.css'  # Указываем CSS для блога
+        'css_file': 'blog.css'  # Указываем css для блога
     }
     return render_template("blog.html", **context)
 
@@ -28,7 +28,7 @@ def contacts():
     context = {
         'question': 'Контакты',
         'active_page': 'contacts',
-        'css_file': 'contact.css'  # Указываем CSS для страницы контактов
+        'css_file': 'contact.css'  # Указываем css для страницы контактов
     }
     return render_template("contact.html", **context)
 
