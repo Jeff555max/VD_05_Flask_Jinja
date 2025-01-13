@@ -2,29 +2,36 @@ from flask import Flask, render_template
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
+
 @app.route('/')
 def home():
     context = {
         'question': 'Дубровники',
-        'active_page': 'home'
+        'active_page': 'home',
+        'css_file': 'index.css'  # Указываем CSS для главной страницы
     }
-    return render_template("index.html", **context) #распаковываем словарь и пробрасываем наши переменные
+    return render_template("index.html", **context)
+
 
 @app.route('/blog/')
 def blog():
     context = {
         'question': 'Хорватия и Черногория',
-        'active_page': 'blog'
+        'active_page': 'blog',
+        'css_file': 'blog.css'  # Указываем CSS для блога
     }
-    return render_template("blog.html", **context) #распаковываем словарь и пробрасываем наши переменные)
+    return render_template("blog.html", **context)
+
 
 @app.route('/contacts/')
 def contacts():
     context = {
         'question': 'Контакты',
-        'active_page': 'contacts'
+        'active_page': 'contacts',
+        'css_file': 'contact.css'  # Указываем CSS для страницы контактов
     }
-    return render_template("contact.html", **context) #распаковываем словарь и пробрасываем наши переменные)
+    return render_template("contact.html", **context)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
